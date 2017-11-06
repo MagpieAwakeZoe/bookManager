@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outBox{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            position: absolute;
+        }
+        .inBox{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+<body onload="test()">
+
+
+<div id="test">
+
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+    function test() {
+        var jsons = '[{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/fd64b28110361cf0b3759d973efef454d416ac8f.jpg","link":"https://www.bilibili.com/blackboard/topic/activity-H1EyzJ0hW.html","pub_time":"2017-10-16 11:02:00","title":"欢迎回来"},{"id":0,"img":"http://i0.hdslb.com/bfs/bangumi/a797832e6f57f02b252201b44f2064c35ca9b899.jpg","link":"http://bangumi.bilibili.com/anime/6434","pub_time":"2017-10-16 18:30:00","title":"你的莫氏硬度是多少？"}]'
+        var objs = JSON.parse(jsons)
+        // alert(objs[0].img)
+        var text = ""
+        $.each(objs,function () {
+            //alert(this.img)
+            text += '<div class="outBox">'+
+                '<div class="inBox">'+
+                '<p>'+this.title+'</p>'+
+                '<img src="" alt="">'+
+                '<div class="content">'+
+                this.img+
+                '</div>'+
+                ' </div><br/>'
+            $("#test").append(text)
+        })
+    }
+</script>
+</body>
+</html>

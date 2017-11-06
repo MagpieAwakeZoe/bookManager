@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #comment{
+            width: 360px;
+            height: 530px;
+            background-color: rgba(238,238,238,0.5);
+            margin-top: 100px;
+            margin-left: 100px;
+            border-radius: 7px;
+            display: block;
+        }
+        #windowTop{
+            width: 360px;
+            height:6%;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 7px 7px 0 0;
+        }
+        #panelHeading{
+            padding-left: 10px;
+            padding-top: 9px;
+        }
+        .message{
+            width: 100%;
+            height: 20px;
+
+        }
+        hr{
+            color: white;
+        }
+        .write0{
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            margin-left: 85px;
+            position: relative;
+            top: -13px;
+        }
+        .write{
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            margin-left: 85px;
+            position: relative;
+            top: -10px;
+        }
+       .head_portrait0{
+           width: 50px;
+           height: 50px;
+           border-radius: 50px;
+           background-color: white;
+           position: absolute;
+           top: 141px;
+           left: 116px;
+       }
+        .head_portrait1{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 205px;
+            left: 116px;
+        }
+        .head_portrait2{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 265px;
+            left: 116px;
+        }
+        .head_portrait3{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 327px;
+            left: 116px;
+        }
+        .head_portrait4{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 388px;
+            left: 116px;
+        }
+        .head_portrait5{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 448px;
+            left: 116px;
+        }
+        .head_portrait6{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 509px;
+            left: 116px;
+        }
+        .head_portrait7{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 570px;
+            left: 116px;
+        }
+    </style>
+    <!-- Jquery在BOOTSTRAP前引用 -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body background="../../img/bgpic.jpg">
+<div id="comment">
+<div id="windowTop">
+    <div id="panelHeading">
+        <i class="glyphicon glyphicon-comment" style="color: white" ></i>
+        <p style="color: white;font-size: 15px;margin-left: 20px;margin-top: -22px;"><b>最新评论</b><i id="close" class="glyphicon glyphicon-remove" style="color: white;padding-top: -80px;margin-left: 305px;position: relative;top: -17px"></i></p>
+    </div>
+    <div id="commentContent">
+        <div class="message">
+            <div class="head_portrait0"></div>
+            <div class="write0">
+                <p style="padding-top: 10px;padding-left: 10px">我对江南出的新书很期待</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait1"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">我也是唉！</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait2"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">最近想看一些教育类的书有推荐不？</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait3"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">我知道有些教育类的书不错</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait4"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">比如？</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait5"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">中国当代教育思想史</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait6"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">能读读书还是不错的</p>
+            </div>
+        </div>
+        <hr>
+        <div class="message">
+            <div class="head_portrait7"></div>
+            <div class="write">
+                <p style="padding-top: 10px;padding-left: 10px">真羡慕你们</p>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>
+<script>
+    //点击右上角的xx关闭评论
+    var close = document.getElementById("close");
+    var comment = document.getElementById("comment");
+    close.onclick = function () {
+        comment.style.display = "none";
+    }
+    close.onmouseover = function () {
+        close.style.color = "red";
+    }
+    close.onmouseout = function () {
+        close.style.color = "white";
+    }
+
+</script>
+</body>
+</html>

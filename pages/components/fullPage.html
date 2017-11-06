@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:background="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>  <!-- Jquery在BOOTSTRAP前引用 -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
+
+    <!--谷歌字体-->
+    <link href='http://fonts.googleapis.com/css?family=Sofadi+One' rel='stylesheet' type='text/css'>
+
+    <style>
+        /*body{*/
+        /*background-image: url("../../img/bgpic.jpg");*/
+        /*background-attachment: fixed;*/
+        /*}*/
+        body{
+            cursor: url('../../img/cursor2.png'), default;
+        }
+
+        .bookCover{
+            width: 740px;
+            height: 600px;
+            background-color: rgba(238,238,238,0.5);
+            margin-top: 100px;
+            margin-left: 100px;
+            border-radius: 7px;
+            display: block;
+            box-shadow: 5px 5px 40px #000;
+        }
+        #bookTitle{
+            width: 240px;
+            height: 50px;
+            background-color: rgba(56,18,213,0.5);
+            border-radius: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 30px;
+            font-family: 'Sofadi One', cursive;
+        }
+        #bookContent{
+            width: 600px;
+            height: 450px;
+            background-color: rgba(255,255,255,0.5);
+            box-shadow: 5px 5px 40px #000;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 60px;
+            border-radius: 7px;
+        }
+        #bookPic{
+            width: 560px;
+            height: 410px;
+            margin-left: 20px;
+            position: relative;
+            top: 20px;
+            z-index:1;
+            background: url("../../img/book1.png");
+            cursor: url('../../img/cursor1.png'), default;
+        }
+        #maskFont{
+            width: 530px;
+            height: 380px;
+            background-color: rgba(0,0,0,0);
+            position: relative;
+            top: -410px;
+            left: 25px;
+            opacity: 0;
+        }
+        h2 {
+            font-family: 'Sofadi One', cursive;
+        }
+
+        .bookCover2{
+            width: 740px;
+            height: 600px;
+            background-color: rgba(238,238,238,0.5);
+            margin-top: 100px;
+            margin-left: 100px;
+            border-radius: 7px;
+            display: block;
+            box-shadow: 5px 5px 40px #000;
+        }
+        #bookTitle2{
+            width: 240px;
+            height: 50px;
+            background-color: rgba(56,18,213,0.5);
+            border-radius: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 30px;
+            font-family: 'Sofadi One', cursive;
+        }
+        #bookContent2{
+            width: 600px;
+            height: 450px;
+            background-color: rgba(255,255,255,0.5);
+            box-shadow: 5px 5px 40px #000;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 60px;
+            border-radius: 7px;
+        }
+        #bookPic2{
+            width: 560px;
+            height: 410px;
+            margin-left: 20px;
+            position: relative;
+            top: 20px;
+            z-index:1;
+            background: url("../../img/book1.png");
+            cursor: url('../../img/cursor1.png'), default;
+
+        }
+        #maskFont2{
+            width: 530px;
+            height: 380px;
+            background-color: rgba(0,0,0,0);
+            position: relative;
+            top: -410px;
+            left: 25px;
+            opacity: 0;
+        }
+        h2 {
+            font-family: 'Sofadi One', cursive;
+        }
+
+        .bookCover3{
+            width: 740px;
+            height: 600px;
+            background-color: rgba(238,238,238,0.5);
+            margin-top: 100px;
+            margin-left: 100px;
+            border-radius: 7px;
+            display: block;
+            box-shadow: 5px 5px 40px #000;
+        }
+        #bookTitle3{
+            width: 240px;
+            height: 50px;
+            background-color: rgba(56,18,213,0.5);
+            border-radius: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 30px;
+            font-family: 'Sofadi One', cursive;
+
+        }
+        #bookContent3{
+            width: 600px;
+            height: 450px;
+            background-color: rgba(255,255,255,0.5);
+            box-shadow: 5px 5px 40px #000;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 60px;
+            border-radius: 7px;
+        }
+        #bookPic3{
+            width: 560px;
+            height: 410px;
+            margin-left: 20px;
+            position: relative;
+            top: 20px;
+            z-index:1;
+            background: url("../../img/book1.png");
+            cursor: url('../../img/cursor1.png'), default;
+
+        }
+        #maskFont3{
+            width: 530px;
+            height: 380px;
+            background-color: rgba(0,0,0,0);
+            position: relative;
+            top: -410px;
+            left: 25px;
+            opacity: 0;
+        }
+        h2 {
+            font-family: 'Sofadi One', cursive;
+        }
+
+
+        /*标题字体的设置*/
+        #titleFont2{
+            color: white;
+            font-size: 29px;
+            position: relative;
+            top: 10px;
+            text-shadow: 0px 0px 0px white;
+            /*左右居中没做好*/
+        }
+        #titleFont3{
+            color: white;
+            font-size: 29px;
+            position: relative;
+            top: 10px;
+            text-shadow: 0px 0px 0px white;
+            /*左右居中没做好*/
+        }
+        #titleFont{
+            color: white;
+            font-size: 29px;
+            position: relative;
+            top: 5px;
+            text-shadow: 0px 0px 0px white;
+
+            /*左右居中没做好*/
+        }
+
+        /*字体阴影*/
+
+
+
+
+        /*comment的样式*/
+        #comment{
+            width: 360px;
+            height: 530px;
+            background-color: rgba(238,238,238,0.5);
+            margin-top: -2000px;
+            margin-left: 950px;
+            border-radius: 7px;
+            display: block;
+        }
+        #windowTop{
+            width: 360px;
+            height:6%;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 7px 7px 0 0;
+        }
+        #panelHeading{
+            padding-left: 10px;
+            padding-top: 9px;
+        }
+        .message{
+            width: 100%;
+            height: 20px;
+
+        }
+        hr{
+            color: white;
+        }
+        .write0{
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            margin-left: 85px;
+            position: relative;
+            top: -13px;
+        }
+        .write{
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            margin-left: 85px;
+            position: relative;
+            top: -10px;
+        }
+        .head_portrait0{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 141px;
+            left: 970px;
+        }
+        .head_portrait1{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 205px;
+            left: 970px;
+        }
+        .head_portrait2{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 265px;
+            left: 970px;
+        }
+        .head_portrait3{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 327px;
+            left: 970px;
+        }
+        .head_portrait4{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 388px;
+            left: 970px;
+        }
+        .head_portrait5{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 448px;
+            left: 970px;
+        }
+        .head_portrait6{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 509px;
+            left: 970px;
+        }
+        .head_portrait7{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 570px;
+            left: 970px;
+        }
+    </style>
+</head>
+<body>
+<div class="bookCover">
+    <div id="bookTitle">
+        <p id="titleFont">宇宙原来如此有趣</p>
+    </div>
+    <div id="bookContent" onclick="event.cancelBubble = true">
+        <div id="bookPic" onclick="event.cancelBubble = true">
+            <!--<img src="../../img/book1.png" alt="">-->
+            <!--<h2 class="title"><span>夕阳下的风景</span></h2>-->
+            <div>
+                <img src="../../img/blackBackground.png" alt="" style="opacity: 0" id="mask">
+                <div id="maskFont">
+                    <h2 style="color: white;">我对刀独的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多少放假了但是就发了多少付款的了解发来的开始附近的考生加分屌丝夫妇</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var bookContent = document.getElementById("bookContent");
+    var bookCover = document.getElementsByClassName("bookCover");
+    var bookPic = document.getElementById("bookPic");
+    var bookTitle = document.getElementById("bookTitle");
+    var mask = document.getElementById("mask");
+    var maskFont = document.getElementById("maskFont");
+    var titleFont = document.getElementById("titleFont");
+    bookCover.onmouseover = function () {
+        bookCover.style.cssText = "box-shadow: 5px 5px 100px #000;"
+    }
+    bookContent.onmouseover = function () {
+        bookContent.style.cssText = "box-shadow: 5px 5px 100px #000;"
+    }
+    bookContent.onmouseout = function () {
+        bookContent.style.cssText = "box-shadow: 5px 5px 40px #000;"
+    }
+    bookPic.onmouseover = function () {
+        mask.style.cssText = "opacity : 0.7";
+        maskFont.style.cssText = "opacity : 0.7";
+    }
+    bookPic.onmouseout = function () {
+        mask.style.cssText = "opacity : 0";
+        maskFont.style.cssText = "opacity : 0";
+    }
+    //标题字体变化
+    bookTitle.onmouseover = function () {
+        titleFont.style.cssText = "text-shadow: 3px 3px 13px blue;";
+        bookTitle.style.cssText = "background-color: rgba(255,255,255,0);";
+    }
+    bookTitle.onmouseout = function () {
+        titleFont.style.cssText = "text-shadow: 0px 0px 0px white;";
+        bookTitle.style.cssText = "background-color: rgba(56,18,213,0.5);";
+    }
+</script>
+<div class="bookCover2">
+    <div id="bookTitle2" >
+        <h3 id="titleFont2">宇宙原来如此有趣</h3>
+    </div>
+    <div id="bookContent2" onclick="event.cancelBubble = true">
+        <div id="bookPic2" onclick="event.cancelBubble = true">
+            <!--<img src="../../img/book1.png" alt="">-->
+            <!--<h2 class="title"><span>夕阳下的风景</span></h2>-->
+            <div>
+                <img src="../../img/blackBackground.png" alt="" style="opacity: 0" id="mask2">
+                <div id="maskFont2">
+                    <h2 style="color: white;">我对刀独的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多少放假了但是就发了多少付款的了解发来的开始附近的考生加分屌丝夫妇</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var bookContent2 = document.getElementById("bookContent2");
+    var bookCover2 = document.getElementsByClassName("bookCover2");
+    var bookPic2= document.getElementById("bookPic2");
+    var bookTitle2 = document.getElementById("bookTitle2");
+    var mask2 = document.getElementById("mask2");
+    var maskFont2 = document.getElementById("maskFont2");
+    var titleFont2 = document.getElementById("titleFont2");
+    bookCover2.onmouseover = function () {
+        bookCover2.style.cssText = "box-shadow: 5px 5px 100px #000;"
+    }
+    bookContent2.onmouseover = function () {
+        bookContent2.style.cssText = "box-shadow: 5px 5px 100px #000;"
+    }
+    bookContent2.onmouseout = function () {
+        bookContent2.style.cssText = "box-shadow: 5px 5px 40px #000;"
+    }
+    bookPic2.onmouseover = function () {
+        mask2.style.cssText = "opacity : 0.7";
+        maskFont2.style.cssText = "opacity : 0.7";
+    }
+    bookPic2.onmouseout = function () {
+        mask2.style.cssText = "opacity : 0";
+        maskFont2.style.cssText = "opacity : 0";
+    }
+    bookTitle2.onmouseover = function () {
+        titleFont2.style.cssText = "text-shadow: 3px 3px 13px blue;";
+        bookTitle2.style.cssText = "background-color: rgba(255,255,255,0);";
+    }
+    bookTitle2.onmouseout = function () {
+        titleFont2.style.cssText = "text-shadow: 0px 0px 0px white;";
+        bookTitle2.style.cssText = "background-color: rgba(56,18,213,0.5);";
+    }
+</script>
+<div class="bookCover3">
+    <div id="bookTitle3">
+        <h3 id="titleFont3">宇宙原来如此有趣</h3>
+    </div>
+    <div id="bookContent3" onclick="event.cancelBubble = true">
+        <div id="bookPic3" onclick="event.cancelBubble = true">
+            <!--<img src="../../img/book1.png" alt="">-->
+            <!--<h2 class="title"><span>夕阳下的风景</span></h2>-->
+            <div>
+                <img src="../../img/blackBackground.png" alt="" style="opacity: 0" id="mask3">
+                <div id="maskFont3">
+                    <h2 style="color: white;">我对刀独的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多少放假了但是就发了多少付款的了解发来的开始附近的考生加分屌丝夫妇</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var bookContent3 = document.getElementById("bookContent3");
+    var bookCover3 = document.getElementsByClassName("bookCover3");
+    var bookPic3 = document.getElementById("bookPic3");
+    var bookTitle3 = document.getElementById("bookTitle3");
+    var mask3 = document.getElementById("mask3");
+    var maskFont3 = document.getElementById("maskFont3");
+    var titleFont3 = document.getElementById("titleFont3");
+    bookCover3.onmouseover = function () {
+        bookCover3.style.cssText = "box-shadow: 5px 5px 100px #000;"
+    }
+    bookContent3.onmouseover = function () {
+        bookContent3.style.cssText = "box-shadow: 5px 5px 100px #000;"
+    }
+    bookContent3.onmouseout = function () {
+        bookContent3.style.cssText = "box-shadow: 5px 5px 40px #000;"
+    }
+    bookPic3.onmouseover = function () {
+        mask3.style.cssText = "opacity : 0.7";
+        maskFont3.style.cssText = "opacity : 0.7";
+    }
+    bookPic3.onmouseout = function () {
+        mask3.style.cssText = "opacity : 0";
+        maskFont3.style.cssText = "opacity : 0";
+    }
+    bookTitle3.onmouseover = function () {
+        titleFont3.style.cssText = "text-shadow: 3px 3px 13px blue;";
+        bookTitle3.style.cssText = "background-color: rgba(255,255,255,0);";
+    }
+    bookTitle3.onmouseout = function () {
+        titleFont3.style.cssText = "text-shadow: 0px 0px 0px white;";
+        bookTitle3.style.cssText = "background-color: rgba(56,18,213,0.5);";
+    }
+</script>
+<!--评论部分-->
+<div id="comment">
+    <div id="windowTop">
+        <div id="panelHeading">
+            <i class="glyphicon glyphicon-comment" style="color: white" ></i>
+            <p style="color: white;font-size: 15px;margin-left: 20px;margin-top: -22px;"><b>最新评论</b><i id="close" class="glyphicon glyphicon-remove" style="color: white;padding-top: -80px;margin-left: 305px;position: relative;top: -17px"></i></p>
+        </div>
+        <div id="commentContent">
+            <div class="message">
+                <div class="head_portrait0"></div>
+                <div class="write0">
+                    <p style="padding-top: 10px;padding-left: 10px">我对江南出的新书很期待</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait1"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">我也是唉！</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait2"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">最近想看一些教育类的书有推荐不？</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait3"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">我知道有些教育类的书不错</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait4"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">比如？</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait5"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">中国当代教育思想史</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait6"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">能读读书还是不错的</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait7"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">真羡慕你们</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!--轮播背景图-->
+<script src="../../js/API.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $.backstretch([
+        '../../img/BgPic1.jpg',
+        '../../img/BgPic2.jpg',
+        '../../img/BgPic3.jpg'
+    ], {
+        fade : 2000, // 动画时长
+        duration : 4000 // 切换延时
+    });
+</script>
+<!--关闭评论-->
+<script>
+    //点击右上角的xx关闭评论
+    var close = document.getElementById("close");
+    var comment = document.getElementById("comment");
+    close.onclick = function () {
+        comment.style.display = "none";
+    }
+    close.onmouseover = function () {
+        close.style.color = "red";
+    }
+    close.onmouseout = function () {
+        close.style.color = "white";
+    }
+
+</script>
+</body>
+</html>

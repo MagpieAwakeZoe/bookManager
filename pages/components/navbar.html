@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        .nav{
+            background:rgba(0,0,0,0.7);
+            min-height:55px;            /*段落的最小高度*/
+            /*text-align:center;*/
+            padding-left: 350px;
+            letter-spacing:-4px;
+            font-family: 'Varela Round', cursive;
+            font-size: 18px;
+        }
+        .nav li{
+            display:inline-block;
+            letter-spacing:0;           /*字符的间距*/
+        }
+        .nav a{
+            display:inline-block;
+            padding-left:45px;          /*每个a标签之间的左间隔*/
+            line-height:55px;           /*a标签的padding高度*/
+            color:#FFF;
+           margin-right:1em;            /*每个a标签之间的右间隔*/
+            background-repeat:no-repeat;
+            background-position:left center;
+            text-decoration : none;     /*去除a标签的下划线*/
+        }
+
+        .nav :hover{
+           background-color: rgba(76,68,147,1);
+        }
+
+
+        .nav li:nth-child(1) a{ background-image: url(../../img/icon_home.png);}
+        .nav li:nth-child(2) a{ background-image: url(../../img/icon_star.png);}
+        .nav li:nth-child(3) a{ background-image: url(../../img/icon_star.png);}
+        .nav li:nth-child(4) a{ background-image: url(../../img/icon_heart1.png);}
+        .nav li:nth-child(5) a{ background-image: url(../../img/icon_book.png);}
+        .nav li:nth-child(6) a{ background-image: url(../../img/icon_message.png);}
+    </style>
+</head>
+<body background="../../img/bgpic.jpg">
+<ul class="nav">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">喜欢的</a></li>
+    <li><a href="#">收藏</a></li>
+    <li><a href="#">收藏</a></li>
+    <li><a href="#">推荐</a></li>
+    <li><a href="#">消息</a></li>
+</ul>
+</body>
+</html>

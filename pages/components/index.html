@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <!-- Jquery在BOOTSTRAP前引用 -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
+    <!--滚动动画-->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--谷歌字体-->
+    <link href='http://fonts.googleapis.com/css?family=Sofadi+One' rel='stylesheet' type='text/css'>
+
+
+    <style>
+        body{
+            cursor: url('../../img/cursor3.png'), default;
+        }
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+
+        /*导航条的样式*/
+        .nav{
+            background:rgba(0,0,0,0.5);
+            height:55px;            /*段落的最小高度*/
+            /*text-align:center;*/
+            padding-left: 350px;
+            letter-spacing:-4px;
+            font-family: 'Varela Round', cursive;
+            font-size: 18px;
+        }
+        .nav li{
+            display:inline-block;
+            letter-spacing:0;           /*字符的间距*/
+            position: relative;
+            left: -100px;
+        }
+        .nav a{
+            display:inline-block;
+            padding-left:40px;          /*每个a标签之间的左间隔*/
+            line-height:35px;           /*a标签的padding高度*/
+            color:#ffffff;
+            margin-right:1em;            /*每个a标签之间的右间隔*/
+            background-repeat:no-repeat;
+            background-position:left center;
+            text-decoration : none;     /*去除a标签的下划线*/
+        }
+        .nav a :hover{
+
+        }
+        /*.table-hover>tbody>tr:hover {*/
+        /*background-color: wheat!important;*/
+        /*}*/
+        .nav li:nth-child(1) a{ background-image: url(../../img/icon_home.png);}
+        .nav li:nth-child(2) a{ background-image: url(../../img/icon_home.png);}
+        .nav li:nth-child(3) a{ background-image: url(../../img/icon_star.png);}
+        .nav li:nth-child(4) a{ background-image: url(../../img/icon_heart1.png);}
+        .nav li:nth-child(5) a{ background-image: url(../../img/icon_book.png);}
+        .nav li:nth-child(6) a{ background-image: url(../../img/icon_message.png);}
+        /*comment的样式*/
+        #comment{
+            width: 360px;
+            height: 530px;
+            background-color: rgba(238,238,238,0.5);
+            margin-top: 25px;
+            margin-left: 1093px;
+            border-radius: 7px;
+            display: block;
+        }
+        #windowTop{
+            width: 360px;
+            height:6%;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 7px 7px 0 0;
+        }
+        #panelHeading{
+            padding-left: 10px;
+            padding-top: 9px;
+        }
+        .message{
+            width: 100%;
+            height: 20px;
+
+        }
+        hr{
+            color: white;
+        }
+        .write0{
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            margin-left: 85px;
+            position: relative;
+            top: -13px;
+        }
+        .write{
+            width: 250px;
+            height: 40px;
+            background-color: white;
+            border-radius: 5px;
+            margin-left: 85px;
+            position: relative;
+            top: -10px;
+        }
+        .head_portrait{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            left: 1110px;
+            margin-top: -13px;
+        }
+        .head_portrait0{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: white;
+            position: absolute;
+            top: 499px;
+            left: 1110px;
+        }
+        .head_portrait :nth-child(1){  top: 180px;  }
+        .head_portrait :nth-child(2){  top: 241px;  }
+        .head_portrait :nth-child(3){  top: 301px;  }
+        .head_portrait :nth-child(4){  top: 362px;  }
+        .head_portrait :nth-child(5){  top: 423px;  }
+        .head_portrait :nth-child(6){  top: 485px;  }
+        .head_portrait :nth-child(7){  top: 546px;  }
+        /*书内容的标题*/
+        .bookTitle{
+            width: 240px;
+            height: 50px;
+            background-color: rgba(56,18,213,0.5);
+            border-radius: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 30px;
+            font-family: 'Sofadi One', cursive;
+        }
+        .bookTitle:hover{
+            background-color: rgba(0,0,0,0);
+        }
+
+        .titleFont{
+            color: white;
+            font-size: 29px;
+            position: relative;
+            top: 5px;
+            text-shadow: 0px 0px 0px white;
+            transition-duration: 1s;
+            text-align: center;
+            cursor: url('../../img/cursor1.png'), default;
+        }
+        .titleFont:hover{
+            text-shadow: 3px 3px 13px blue;;
+            transition-duration: 1s;
+            cursor: url('../../img/cursor1.png'), default;
+        }
+        /*搜索结果横条*/
+        .searchBar{
+            width: 700px;
+            height: 35px;
+            background-color: rgba(255,255,255,0.5);
+            position: relative;
+            left: 178px;
+            top: 0px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(255,255,255,0.7);
+        }
+        #positionBar{
+            position: relative;
+            top: 9px;
+            left: 10px;
+            color: rgba(217,83,79,1);
+        }
+        /*翻转动画*/
+        .outBox{
+            height:auto;
+            background-color:rgba(255,255,255,0);
+            width:1000px;
+            float:left;
+            perspective:1000px;
+            transform-style:preserve-3d;
+            overflow:hidden;
+            position: relative;
+            z-index: 0;
+        }
+        .gs{
+            transform:rotateX(-78.7deg);
+            position:relative;
+            top:50px;
+            /*top:800px;*/
+            background-color:rgba(255,255,255,0.7);
+            left:180px;
+            width:700px;
+            height:600px;
+            transform-style:preserve-3d;
+            border-radius: 8px;
+            box-shadow: 5px 5px 40px #000;
+            z-index: 1;
+        }
+        .img_3d{
+            transform-style:preserve-3d;
+            animation-iteration-count:infinite;
+            animation-timing-function:ease-in-out;
+            position: relative;
+            z-index: 2;
+            cursor: url('../../img/cursor1.png'), default;
+        }
+        .xz{
+            animation:roate 2s;
+            animation-fill-mode:forwards;
+            animation-direction:alternate;
+            animation-timing-function: ease-out;
+        }
+        @keyframes roate {
+            0%     { transform:rotateX(-90deg);}
+            33.3%     { transform:rotateX(0deg);}
+            66.6%     { transform:rotateX(10deg);}
+            100%   { transform:rotateX(0deg);}
+        }
+        .middleBox{
+            background-color:rgba(255,255,255,0.7);
+            width: 600px;
+            height: 450px;
+            position: relative;
+            top: 60px;
+            left: 50px;
+            border-radius: 8px;
+            box-shadow: 5px 5px 40px #000;
+            overflow: hidden;
+        }
+        /*遮罩层设置*/
+        h2{
+            font-family: 'Sofadi One', cursive;
+            padding-left: 10px; ;
+            padding-top: 10px;
+        }
+
+        @keyframes big {
+            0%     { transform:scale(1.0,1.0) }
+            50%     { transform:scale(2.0,2.0) }
+            100%   { transform:scale(1.0,1.0) }
+        }
+        .maskFont{
+            background-color: black;
+            margin-top: -410px;
+            margin-left: 21px;
+            width: 560px;
+            height: 409px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 3;
+            opacity: 0;
+            transition-duration: 1s;
+            /*设置z-index的时候一定要给定position属性*/
+            /*display: none;*/
+            animation-fill-mode:forwards;
+            animation-direction:alternate;
+            overflow: hidden;
+            cursor: url('../../img/cursor1.png'), default;
+        }
+        .maskFont:hover{
+            opacity: 0.8;
+            transition-duration: 1s;
+            animation:big 2s;
+            cursor: url('../../img/cursor1.png'), default;
+        }
+        /*搜索条*/
+        .search{
+            width: 360px; ;
+            height: 50px;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+            top: 20px;
+            left: 1091px;
+        }
+        .input{
+            width: 276px; ;
+            height: 36px;
+            background-color: rgba(0,0,0,0);
+            border-radius: 5px;
+            position: relative;
+            top: 7px;
+            left: 6px;
+            border: 1px rgba(248,50,47,0.5) solid;
+            box-shadow:1px 1px 10px rgba(248,50,47,0.5),white;
+            display: inline-block
+        }
+        #input{
+            width: 276px;;
+            height: 36px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 5px;
+            position: relative;
+            border: none;
+            padding-left: 10px;
+            font-size: 15px;
+            display: inline-block
+        }
+        #btn{
+            width: 50px;
+            height: 36px;
+            border-radius: 8px;
+            border: none;
+            background-color: rgba(217,83,79,1);
+            color: white;
+            position: relative;
+            top: 6px;
+            right: -14px;
+        }
+        /*登录*/
+        #login{
+            width: 360px;
+            height: 254px;
+            background-color: rgba(255,255,255,0.5);
+            position: relative;
+            margin-left: 1090px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+        #loginHeading{
+            width: 360px;
+            height: 30px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 8px 8px 0 0;
+        }
+        #loginFont{
+            color: white;
+            padding-left: 13px;
+            padding-top: 6px;
+        }
+        #inputLogin1{
+            width: 276px;;
+            height: 36px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 0 5px 5px 0;
+            position: relative;
+            border: none;
+            padding-left: 10px;
+            font-size: 15px;
+            display: inline-block;
+            border: 1px red solid;
+            left: 62px;
+            top: -11px;
+        }
+        #inputLogin2{
+            width: 276px;;
+            height: 36px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 0 5px 5px 0;
+            position: relative;
+            border: none;
+            padding-left: 10px;
+            font-size: 15px;
+            display: inline-block;
+            border: 1px red solid;
+            left: 62px;
+            top: -26px;
+        }
+        #loginIcon{
+            width: 43px;
+            height: 36px;
+            background-color: rgba(217,83,79,1);
+            border-radius: 8px 0 0 8px;
+            position: relative;
+            top: 25px;
+            left: 20px;
+        }
+        #passwordIcon{
+            width: 43px;
+            height: 36px;
+            background-color: rgba(217,83,79,1);
+            border-radius: 8px 0 0 8px;
+            position: relative;
+            top: 10px;
+            left: 20px;
+        }
+        #loginBtn{
+            border-radius: 5px;
+            width: 152px;
+            height: 46px;
+            background-color:rgba(0,0,0,0.7);
+            color: white;
+            position: relative;
+            left: 22px;
+            top: -14px;
+            cursor:pointer;
+        }
+        #registBtn{
+            border-radius: 5px;
+            width: 152px;
+            height: 46px;
+            background-color:rgba(0,0,0,0.7);
+            color: white;
+            position: relative;
+            left: 190px;
+            top: -60px;
+            cursor:pointer;
+        }
+        .BtnFont{
+            font-size: 15px;
+            padding-left: 60px;
+            padding-top: 13px;
+        }
+        #forgetPassword{
+            position: relative;
+            top: -10px;
+            left: 260px;
+        }
+
+    </style>
+
+</head>
+<body onload="loopGS()">
+<!--内容部分---------------------------------------------------------------------------------------------------------------------->
+<!--导航条-->
+<div id="navbar" >
+    <ul class="nav">
+        <img src="../../img/icon.png" alt="" style="margin-left: -330px;margin-right: 120px">
+        <li class="navBlock"><a href="index.html">&nbsp;&nbsp;&nbsp;&nbsp;首页</a></li>
+        <li class="navBlock"><a href="search.html">&nbsp;&nbsp;&nbsp;&nbsp;找书</a></li>
+        <li class="navBlock"><a href="favourite.html">&nbsp;&nbsp;&nbsp;&nbsp;收藏</a></li>
+        <li class="navBlock"><a href="appraise.html">&nbsp;&nbsp;&nbsp;&nbsp;测评</a></li>
+        <li class="navBlock"><a href="message.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;留言版</a></li>
+        <!--<li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;消息</a></li>-->
+        <p style="margin-top: -40px;color: white;font-size: 25px;margin-left: 760px;letter-spacing: 1px">欢迎回来&nbsp;magpieawake</p>
+    </ul>
+</div>
+<!--搜索-->
+<div class="search">
+    <div class="input">
+        <input type="text" placeholder="&nbsp;&nbsp;请输入你要找的书名" id="input">
+    </div>
+    <div style="display: inline-block">
+        <button id="btn">搜索</button>
+    </div>
+</div>
+<!--书的介绍部分&翻转动画XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<div class="searchBar">
+    <p id="positionBar"><b>您所在的位置:</b></p>
+</div>
+<div class="outBox" id="outBox">
+    <!--<div class="gs">-->
+        <!--&lt;!&ndash;标题&ndash;&gt;-->
+        <!--<div class="bookTitle" id="bookTitle">-->
+            <!--<p class="titleFont" id="titleFont">宇宙原来如此有趣</p>-->
+        <!--</div>-->
+        <!--<div class="middleBox">-->
+            <!--&lt;!&ndash;图书的图片&ndash;&gt;-->
+            <!--<img class="img_3d" src="../../img/book1.png" alt="" style="margin-top: 21px;margin-left: 21px;border-radius: 8px;">-->
+            <!--&lt;!&ndash;遮罩文字&ndash;&gt;-->
+            <!--<div class="maskFont" id="maskFont0">-->
+                <!--<h2 style="color: white;">我对刀独的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多我对刀独立我对刀独立开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多开发的快乐发货端口是否好看的就是反对分裂的开始地方发了多少放假了但是就发了多少付款的了解发来的开始附近的考生加分屌丝夫妇</h2>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<!--登录界面-->
+<div id="login">
+    <div id="loginHeading">
+        <p id="loginFont">请登录</p>
+    </div>
+    <div class="loginInput">
+        <div id="loginIcon"><img src="../../img/loginIcon.png" alt="" style="position: relative;left: 7px;top: 3px"></div>
+        <input type="text"  id="inputLogin1">
+        <div id="passwordIcon"><img src="../../img/passwordIcon.png" alt="" style="position: relative;left: 7px;top: 5px"></div>
+        <input type="text"  id="inputLogin2">
+    </div>
+    <a href=""><p id="forgetPassword"><b>忘记密码?</b></p></a>
+    <div id="loginBtn"><p class="BtnFont">登录</p></div>
+    <div id="registBtn"><p class="BtnFont">注册</p></div>
+
+
+</div>
+<!--评论部分-->
+<div id="comment">
+    <div id="windowTop">
+        <div id="panelHeading">
+            <i class="glyphicon glyphicon-comment" style="color: white" ></i>
+            <p style="color: white;font-size: 15px;margin-left: 20px;margin-top: -22px;"><b>最新评论</b><i id="close" class="glyphicon glyphicon-remove" style="color: white;padding-top: -80px;margin-left: 305px;position: relative;top: -17px;"></i></p>
+        </div>
+        <div id="commentContent">
+            <div class="message">
+                <div class="head_portrait0"></div>
+                <div class="write0">
+                    <p style="padding-top: 10px;padding-left: 10px">我对江南出的新书很期待</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">我也是唉！</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">最近想看一些教育类的书有推荐不？</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">我知道有些教育类的书不错</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">比如？</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">中国当代教育思想史</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">能读读书还是不错的</p>
+                </div>
+            </div>
+            <hr>
+            <div class="message">
+                <div class="head_portrait"></div>
+                <div class="write">
+                    <p style="padding-top: 10px;padding-left: 10px">真羡慕你们</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!--脚本部分---------------------------------------------------------------------------------------------------------------------->
+
+<!--登录部分的脚本-->
+<script>
+    var login1 = document.getElementById("inputLogin1");
+    var login2 = document.getElementById("inputLogin2");
+    var loginBtn = document.getElementById("loginBtn");
+    var registBtn = document.getElementById("registBtn");
+    login1.onfocus = function () {
+        login1.style.backgroundColor = "white";
+    }
+    login1.onblur = function () {
+        login1.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+    login2.onfocus = function () {
+        login2.style.backgroundColor = "white";
+    }
+    login2.onblur = function () {
+        login2.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+    loginBtn.onmouseover = function () {
+        loginBtn.style.backgroundColor = "rgba(217,83,79,1)";
+    }
+    loginBtn.onmouseout = function () {
+        loginBtn.style.backgroundColor = "rgba(0,0,0,0.7)";
+    }
+    registBtn.onmouseover = function () {
+        registBtn.style.backgroundColor = "rgba(217,83,79,1)";
+    }
+    registBtn.onmouseout = function () {
+        registBtn.style.backgroundColor = "rgba(0,0,0,0.7)";
+    }
+    registBtn.onclick=function () {
+        window.location.href = "regist.html";
+    }
+</script>
+<!--翻转动画脚本-->
+<script type="text/javascript">
+    function gdjz(div,cssname,offset){
+        var a,b,c,d;
+        d=$(div).offset().top;
+        a=eval(d + offset);
+        b=$(window).scrollTop();
+        c=$(window).height();
+        if(b+c>a){
+            $((div)).addClass((cssname));
+        }
+    }
+
+    $(document).ready(function(e) {
+        $(window).scroll(function(){
+                gdjz(".gs",'xz',700);
+            }
+
+            /*var a,b,c;
+             a=$("#dh").offset().top;//元素相对于窗口的距离
+             b=$(window).scrollTop(); //监控窗口已滚动的距离;
+             c=$(document).height();//整个文档的高度
+             d=$(window).height();//浏览器窗口的高度*/
+
+            /*if(d+b>a+100){
+             $("#dh").addClass("xz");
+             }
+             */
+        );
+    });
+</script>
+<!--搜索书名的文字阴影去除和颜色变化-->
+<script>
+    var input = document.getElementById("input");
+    input.onfocus = function () {
+        input.style.backgroundColor = "white";
+    }
+    input.onblur = function () {
+        input.style.backgroundColor = "rgba(0,0,0,0)";
+    }
+
+</script>
+<!--遮罩文字脚本XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<script>
+//    for(var i=0;i<3;i++){
+//        var maskFont = document.getElementsByClassName("maskFont")[i];
+//        maskFont.onmouseover = function () {
+//            maskFont.style.cssText = "opacity : 0.8";
+//        }
+//        maskFont.onmouseout = function () {
+//            maskFont.style.cssText = "opacity : 0";
+//        }
+//    }
+</script>
+<!--书的标题的颜色变化XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<script>
+//    for(var i=0;i<3;i++){
+//        var bookTitle = document.getElementsByClassName("bookTitle")[i];
+//        var titleFont = document.getElementsByClassName("titleFont")[i];
+//        bookTitle.onmouseover = function () {
+//            titleFont.style.cssText = "text-shadow: 3px 3px 13px blue;";
+//            bookTitle.style.cssText = "background-color: rgba(255,255,255,0);";
+//        }
+//        bookTitle.onmouseout = function () {
+//            titleFont.style.cssText = "text-shadow: 0px 0px 0px white;";
+//            bookTitle.style.cssText = "background-color: rgba(56,18,213,0.5);";
+//        }
+//    }
+
+
+
+</script>
+<!--轮播背景图脚本-->
+<script src="../../js/API.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $.backstretch([
+        '../../img/BgPic1.jpg',
+        '../../img/BgPic2.jpg',
+        '../../img/BgPic3.jpg'
+    ], {
+        fade : 2000, // 动画时长
+        duration : 4000 // 切换延时
+    });
+</script>
+<!--点击右上角的xx关闭评论-->
+<script>
+
+    var close = document.getElementById("close");
+    var comment = document.getElementById("comment");
+    close.onclick = function () {
+        comment.style.display = "none";
+    }
+    close.onmouseover = function () {
+        close.style.color = "red";
+    }
+    close.onmouseout = function () {
+        close.style.color = "white";
+    }
+
+</script>
+<!--循环产生的脚本XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<script>
+    function loopGS() {
+        var jsons = '[{"titleFont":"宇宙原来如此有趣","img":"../../img/book1.png","maskFont":"你知道吗？你的每一次进食，都等于在吃太阳。你和狗狗有84%的DNA是⼀样的。鸟儿也会喝醉酒。亿万年前⼀头恐龙体内的碳原子，现在已经来到你的身体之中。为了做出⼀杯咖啡，从头到尾要消耗170升的水。地球上树木的总量，比银河系的恒星还要多。"},{"titleFont":"今天你看了吗","img":"../../img/book2.png","maskFont":"六段寻常生活中的遇见与别离，如同六次旧日光阴里的擦肩而过： 欢送会上的百合香，地下街英俊的修鞋匠投来的一瞥，陌生人不知所谓地发来的电邮， 多年前路过的苏黎世的点点灯火…… 每场离别各自留下了怎样的声音？ 如何唤醒或扰乱了原本平静的心绪？ 一个清丽淡雅依旧，却风骨日渐明朗的青山七惠！ 《离别的声音》描绘了生命中那些难以忘却的擦身而过留下的痕迹。 她平和地叮嘱我们 —— 在淡漠疏离的世间，每一次相遇都值得珍惜。 "},{"titleFont":"罗斯福新政","img":"../../img/book3.png","maskFont":"罗斯福新政（The New Deal）是指1933年富兰克林·罗斯福就任美国总统后所实行的一系列经济政策。他们主宰总统大选直至1960年代；而反对派的保守派联盟则在1937年到1963年间主掌国会。1936年之前，“自由派”通常指新政的支持者，而“保守派”则指其反对者，两派均有民主党和共和党成员。"}]';
+        var html = "";
+        var objs = JSON.parse(jsons);
+        $.each(objs,function () {
+//            html = '<div class="gs">'
+//                +'         <div class="bookTitle" id="bookTitle">'
+//                +'             <p class="titleFont" id="titleFont">'+this.titleFont+'</p>'
+//                +'         </div>'
+//                +'         <div class="middleBox">'
+//                +'             <img class="img_3d" src="'+this.$img+'" alt="" style="margin-top: 21px;margin-left: 21px;border-radius: 8px;">'
+//                +'             <div class="maskFont" id="maskFont0">'
+//                +'                 <h2 style="color: white;">'+this.maskFont+'</h2>'
+//                +'             </div>'
+//                +'         </div>'
+//                +'     </div>';
+            html+='<div class="gs">'+'<div class="bookTitle" id="bookTitle">'
+                +'<p class="titleFont" id="titleFont">'+this.titleFont+'</p>'+ '</div>'
+                +'<div class="middleBox">'
+                +'<img class="img_3d" src="'+this.img+'" alt="" style="margin-top: 21px;margin-left: 21px;border-radius: 8px;">'
+                +'<div class="maskFont" id="maskFont0">'
+                +'<h2 style="color: white;">'+this.maskFont+'</h2>' +'</div>'+'</div>'  +'</div>'+'<br>'+'<br>'+'<br>';
+        })
+        $("#outBox").append(html);
+    }
+
+
+</script>
+</body>
+</html>

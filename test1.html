@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mid{
+              background-color: red;
+          }
+        #mid2{
+            background-color: blue;
+        }
+        #mid3{
+            background-color: orange;
+        }
+        .mid{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="mid" class="mid"></div>
+<div id="mid2" class="mid"></div>
+<div id="mid3" class="mid"></div>
+<script>
+    var mid2 = document.getElementById("mid");
+    mid2.style.backgroundColor = "green";
+    for(var i =0 ; i < 3; i++){
+        var mid1 = document.getElementsByClassName("mid")[i];
+        mid1.style.width = "400px";
+    }
+</script>
+</body>
+</html>
